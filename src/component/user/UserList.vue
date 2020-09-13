@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <!-- Section Tittle -->
     <div class="row d-flex justify-content-center">
       <div class="col-xl-7 col-lg-8 col-md-11 col-sm-11">
         <div class="section-tittle text-center mb-90">
@@ -8,7 +7,6 @@
         </div>
       </div>
     </div>
-
     <div class="team-area pb-180">
       <div class="container">
         <div class="row team-active dot-style">
@@ -31,13 +29,18 @@ export default {
   components: {UserProfile},
   created() {
     console.log('===== Users =====');
+    this.getUsers({});
+
   },
   computed : {
-    /*
     ...mapState('userStore', {
       users : state => state.users
     })
-     */
+  },
+  methods : {
+    getUsers(payload) {
+      this.$store.dispatch('userStore/getUsers', {})
+    }
   }
 }
 </script>

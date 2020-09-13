@@ -18,11 +18,6 @@ const getters = {
 };
 
 const actions = {
-  getUsers : (store, payload) => {
-    console.log("== getUsers");
-  }
-
-
 
 };
 
