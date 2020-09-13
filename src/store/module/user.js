@@ -1,4 +1,4 @@
-import axios from 'axios'
+import UserService from '../../service/UserService'
 
 const state = {
   users : [],
@@ -16,10 +16,8 @@ const getters = {
 
 const actions = {
   getUsers(store, payload) {
-    axios.get('https://jsonplaceholder.typicode.com/users', {})
-      .then((response) => {
-        store.commit('getUsers', response.data)
-      })
+    let data = UserService.getUsers(payload)
+    store.commit('getUsers', data)
   }
 }
 
