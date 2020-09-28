@@ -1,4 +1,6 @@
 import axios from "axios";
+import {of, tap} from "rxjs";
+
 
 export default class UserService {
 
@@ -9,6 +11,10 @@ export default class UserService {
         data.push(...response.data)
       })
     return data
+  }
+
+  static getUserObservable(payload) {
+    of(payload).toPromise()
   }
 
 }
