@@ -31,6 +31,8 @@ export default {
     console.log('===== Users =====');
     this.getUsers({});
 
+    this.getUserObservable();
+
   },
   computed : {
     ...mapState('userStore', {
@@ -40,6 +42,9 @@ export default {
   methods : {
     getUsers(payload) {
       this.$store.dispatch('userStore/getUsers', {})
+    },
+    getUserObservable(payload) {
+      this.$store.dispatch('userStore/getUserObservable', {})
     }
   }
 }

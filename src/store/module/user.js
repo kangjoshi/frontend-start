@@ -18,6 +18,10 @@ const actions = {
   getUsers(store, payload) {
     let data = UserService.getUsers(payload)
     store.commit('getUsers', data)
+  },
+  getUserObservable(store, payload) {
+    let data = UserService.getUserObservable(payload)
+    //store.commit('getUsers', data)
   }
 }
 
